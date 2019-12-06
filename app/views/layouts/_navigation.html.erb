@@ -4,11 +4,16 @@
     <a class="item">
       Messages
     </a>
-    <div class="right menu">
-      <a class="item">
-        Account
-      </a>
+      </div>
       <% if logged_in? %>
+        <div class="ui simple dropdown item">
+          <span class = "item">Account</span>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <%= link_to "View", "#", class: "item" %>
+            <%= link_to "Edit", "#", class: "item" %>
+          </div>
+        </div>
         <%= link_to "Log Out", logout_path, method: :delete, class: "item" %>
       <% else %>
         <%= link_to "Log In", login_path, class: "item" %>
@@ -16,6 +21,7 @@
             <div class="ui primary button">Sign Up</div>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>
